@@ -16,15 +16,15 @@ test('status code should be 200', async () => {
 });
 
 
-test('response body should contain confirmation that the kit has been deleted', async () => {
-	let actualResponseBody;
+test('response should come true', async () => {
+	let actualResponse;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/7`, {
 			method: 'DELETE',
 		});
-		actualResponseBody = await response.json();
+		actualResponse = await response.json();
 	} catch (error) {
 		console.error(error);
 	}
-	expect(actualResponseBody.ok).toBe(true);
+	expect(actualResponse.ok).toBe(true);
 });
